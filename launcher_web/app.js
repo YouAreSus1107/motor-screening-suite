@@ -1,38 +1,40 @@
-/* ── SVG Icon library (style guide section 8: 2px stroke, rounded) ── */
+/* ── SVG Icon library: Phosphor Icons (MIT, phosphoricons.com), filled glyphs
+   on a 256 grid. Regular weight; the small marks (check, x, arrows, chevron)
+   use bold so they hold at 10-16 px. Source and licence: assets/README.md ── */
 const I = {
-  hand: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V6.5a1.25 1.25 0 0 1 2.5 0V11"/><path d="M10.5 11V5a1.25 1.25 0 0 1 2.5 0v6"/><path d="M13 11.5V6a1.25 1.25 0 0 1 2.5 0v6"/><path d="M15.5 12.5V9a1.25 1.25 0 0 1 2.5 0v4.5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-5.3-3.2l-1.5-2.9a1.25 1.25 0 0 1 2.1-1.3L10 13"/></svg>',
-  spiral: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 12a1.5 1.5 0 0 1 1.5 1.5A3 3 0 0 1 10.5 16.5 4.5 4.5 0 0 1 6 12a6 6 0 0 1 6-6 7.5 7.5 0 0 1 7.5 7.5A9 9 0 0 1 10.5 22.5"/></svg>',
-  broadcast: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="13" rx="2"/><circle cx="12" cy="11.5" r="3.5"/><circle cx="17.5" cy="7.5" r="1" fill="currentColor" stroke="none"/><path d="M8 21h8"/><path d="M12 18v3"/></svg>',
-  mic: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>',
-  eye: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>',
-  wave: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l2-5 3 10 3-12 3 12 2-5h4"/></svg>',
-  walk: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-5 4 3 3 1"/><path d="M10 12l-2 4-3 1"/><path d="M13 15l3 6"/></svg>',
-  play: '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>',
-  stop: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>',
-  check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
-  x: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
-  info: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
-  arrowLeft: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>',
-  arrowRight: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
-  clock: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
-  wave: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 18c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg>',
-  beaker: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v7l4 8H5l4-8V3z"/><line x1="8" y1="3" x2="16" y2="3"/></svg>',
-  home: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/><path d="M9.5 21v-5.5a2.5 2.5 0 0 1 5 0V21"/></svg>',
-  chart: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/><circle cx="7" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="11" cy="10" r="1.1" fill="currentColor" stroke="none"/><circle cx="14" cy="13" r="1.1" fill="currentColor" stroke="none"/><circle cx="19" cy="7" r="1.1" fill="currentColor" stroke="none"/></svg>',
-  up: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>',
-  down: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></svg>',
-  minus: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>',
-  scale: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M6 7l-4 6a4 4 0 0 0 8 0L6 7z"/><path d="M18 7l-4 6a4 4 0 0 0 8 0l-4-6z"/><path d="M4 7h16"/></svg>',
-  code: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
-  lock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
-  layers: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
-  shield: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
-  camera: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h4l2-2h6l2 2h4v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg>',
-  person: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>',
-  image: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-9 9"/></svg>',
-  chevron: '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>',
-  refresh: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><polyline points="20 4 20 11 13 11"/></svg>',
-  stream: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>',
+  hand: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M56,76a60,60,0,0,1,120,0,8,8,0,0,1-16,0,44,44,0,0,0-88,0,8,8,0,1,1-16,0Zm140,44a27.9,27.9,0,0,0-13.36,3.39A28,28,0,0,0,144,106.7V76a28,28,0,0,0-56,0v80l-3.82-6.13a28,28,0,0,0-48.41,28.17l29.32,50A8,8,0,1,0,78.89,220L49.6,170a12,12,0,1,1,20.78-12l.14.23,18.68,30A8,8,0,0,0,104,184V76a12,12,0,0,1,24,0v68a8,8,0,1,0,16,0V132a12,12,0,0,1,24,0v20a8,8,0,0,0,16,0v-4a12,12,0,0,1,24,0v36c0,21.61-7.1,36.3-7.16,36.42a8,8,0,0,0,3.58,10.73A7.9,7.9,0,0,0,208,232a8,8,0,0,0,7.16-4.42c.37-.73,8.85-18,8.85-43.58V148A28,28,0,0,0,196,120Z"/></svg>',
+  spiral: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M248,144a8,8,0,0,1-16,0,96.11,96.11,0,0,0-96-96,88.1,88.1,0,0,0-88,88,80.09,80.09,0,0,0,80,80,72.08,72.08,0,0,0,72-72,64.07,64.07,0,0,0-64-64,56.06,56.06,0,0,0-56,56,48.05,48.05,0,0,0,48,48,40,40,0,0,0,40-40,32,32,0,0,0-32-32,24,24,0,0,0-24,24,16,16,0,0,0,16,16,8,8,0,0,0,8-8,8,8,0,0,1,0-16,16,16,0,0,1,16,16,24,24,0,0,1-24,24,32,32,0,0,1-32-32,40,40,0,0,1,40-40,48.05,48.05,0,0,1,48,48,56.06,56.06,0,0,1-56,56,64.07,64.07,0,0,1-64-64,72.08,72.08,0,0,1,72-72,80.09,80.09,0,0,1,80,80,88.1,88.1,0,0,1-88,88,96.11,96.11,0,0,1-96-96A104.11,104.11,0,0,1,136,32,112.12,112.12,0,0,1,248,144Z"/></svg>',
+  broadcast: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152Zm73.71,7.14a80,80,0,0,1-14.08,22.2,8,8,0,0,1-11.92-10.67,63.95,63.95,0,0,0,0-85.33,8,8,0,1,1,11.92-10.67,80.08,80.08,0,0,1,14.08,84.47ZM69,103.09a64,64,0,0,0,11.26,67.58,8,8,0,0,1-11.92,10.67,79.93,79.93,0,0,1,0-106.67A8,8,0,1,1,80.29,85.34,63.77,63.77,0,0,0,69,103.09ZM248,128a119.58,119.58,0,0,1-34.29,84,8,8,0,1,1-11.42-11.2,103.9,103.9,0,0,0,0-145.56A8,8,0,1,1,213.71,44,119.58,119.58,0,0,1,248,128ZM53.71,200.78A8,8,0,1,1,42.29,212a119.87,119.87,0,0,1,0-168,8,8,0,1,1,11.42,11.2,103.9,103.9,0,0,0,0,145.56Z"/></svg>',
+  mic: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"/></svg>',
+  voice: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"/></svg>',
+  eye: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"/></svg>',
+  wave: '<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M239.24,131.4c-22,46.8-41.4,68.6-61.2,68.6-25.1,0-40.73-33.32-57.28-68.6C107.7,103.56,92.9,72,78,72c-16.4,0-36.31,37.21-46.72,59.4a8,8,0,0,1-14.48-6.8C38.71,77.8,58.16,56,78,56c25.1,0,40.73,33.32,57.28,68.6C148.3,152.44,163.1,184,178,184c16.4,0,36.31-37.21,46.72-59.4a8,8,0,0,1,14.48,6.8Z"/></svg>',
+  walk: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"/></svg>',
+  play: '<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg>',
+  stop: '<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M200,40H56A16,16,0,0,0,40,56V200a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,160H56V56H200V200Z"/></svg>',
+  check: '<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg>',
+  x: '<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"/></svg>',
+  info: '<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></svg>',
+  arrowLeft: '<svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg>',
+  arrowRight: '<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></svg>',
+  clock: '<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></svg>',
+  beaker: '<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M221.69,199.77,160,96.92V40h8a8,8,0,0,0,0-16H88a8,8,0,0,0,0,16h8V96.92L34.31,199.77A16,16,0,0,0,48,224H208a16,16,0,0,0,13.72-24.23ZM110.86,103.25A7.93,7.93,0,0,0,112,99.14V40h32V99.14a7.93,7.93,0,0,0,1.14,4.11L183.36,167c-12,2.37-29.07,1.37-51.75-10.11-15.91-8.05-31.05-12.32-45.22-12.81ZM48,208l28.54-47.58c14.25-1.74,30.31,1.85,47.82,10.72,19,9.61,35,12.88,48,12.88a69.89,69.89,0,0,0,19.55-2.7L208,208Z"/></svg>',
+  home: '<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"/></svg>',
+  chart: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"/></svg>',
+  up: '<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M208.49,120.49a12,12,0,0,1-17,0L140,69V216a12,12,0,0,1-24,0V69L64.49,120.49a12,12,0,0,1-17-17l72-72a12,12,0,0,1,17,0l72,72A12,12,0,0,1,208.49,120.49Z"/></svg>',
+  down: '<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M208.49,152.49l-72,72a12,12,0,0,1-17,0l-72-72a12,12,0,0,1,17-17L116,187V40a12,12,0,0,1,24,0V187l51.51-51.52a12,12,0,0,1,17,17Z"/></svg>',
+  minus: '<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z"/></svg>',
+  scale: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M239.43,133l-32-80h0a8,8,0,0,0-9.16-4.84L136,62V40a8,8,0,0,0-16,0V65.58L54.26,80.19A8,8,0,0,0,48.57,85h0v.06L16.57,165a7.92,7.92,0,0,0-.57,3c0,23.31,24.54,32,40,32s40-8.69,40-32a7.92,7.92,0,0,0-.57-3L66.92,93.77,120,82V208H104a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16H136V78.42L187,67.1,160.57,133a7.92,7.92,0,0,0-.57,3c0,23.31,24.54,32,40,32s40-8.69,40-32A7.92,7.92,0,0,0,239.43,133ZM56,184c-7.53,0-22.76-3.61-23.93-14.64L56,109.54l23.93,59.82C78.76,180.39,63.53,184,56,184Zm144-32c-7.53,0-22.76-3.61-23.93-14.64L200,77.54l23.93,59.82C222.76,148.39,207.53,152,200,152Z"/></svg>',
+  code: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg>',
+  lock: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg>',
+  layers: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M230.91,172A8,8,0,0,1,228,182.91l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,36,169.09l92,53.65,92-53.65A8,8,0,0,1,230.91,172ZM220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09ZM24,80a8,8,0,0,1,4-6.91l96-56a8,8,0,0,1,8.06,0l96,56a8,8,0,0,1,0,13.82l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,24,80Zm23.88,0L128,126.74,208.12,80,128,33.26Z"/></svg>',
+  shield: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg>',
+  camera: '<svg width="13" height="13" viewBox="0 0 256 256" fill="currentColor"><path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"/></svg>',
+  person: '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg>',
+  image: '<svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg>',
+  chevron: '<svg width="10" height="10" viewBox="0 0 256 256" fill="currentColor"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></svg>',
+  refresh: '<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg>',
+  stream: '<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"/></svg>',
 };
 
 const TOOLS = [
@@ -104,7 +106,7 @@ const TOOLS = [
 
 const RESEARCH = [
   { icon:"clock", title:"Motor \u2014 rhythm and movement",
-    text:"Finger tapping measures how much the gaps between taps vary. That variability is higher in neurodegenerative groups than in controls. Spiral tracing adds movement smoothness (SPARC), speed variation, and normalized jerk.",
+    text:"Finger tapping measures how much the gaps between taps vary. That variability is higher in neurodegenerative groups than in controls. Spiral tracing adds how closely the fingertip follows a line, with speed variation and smoothness (SPARC) as readings.",
     cite:"Roalf et al. (2018) \u00b7 Wang et al. (2025) \u00b7 PMC11496774" },
   { icon:"eye", title:"Oculomotor \u2014 inhibitory control",
     text:"The anti-saccade error rate counts how often the eyes are pulled toward a target you were told to look away from. Meta-analysis puts the effect separating Alzheimer's groups from controls at SMD 1.59.",
@@ -112,9 +114,9 @@ const RESEARCH = [
   { icon:"mic", title:"Speech \u2014 articulatory rhythm",
     text:"Repeating pa-ta-ka as fast and evenly as possible is the speech counterpart of finger tapping, scored the same way: how much the gaps between syllables vary. Language measures such as word-finding pauses are planned next.",
     cite:"Li et al., TapTalk (2024) \u00b7 docs/tests/SPEECH_TEST_PLAN.md" },
-  { icon:"home", title:"The method works at home",
-    text:"MediaPipe tapping matched Polhemus electromagnetic sensors within \u00b11 Hz about 90% of the time, and 404 adults with no symptoms completed unsupervised webcam testing at home. Both studies validate the approach, not this implementation.",
-    cite:"Li et al., TapTalk (2024) \u00b7 TAS Test (2022\u20132025) \u00b7 PMC10809289" },
+  { icon:"wave", title:"Tremor and spiral \u2014 steadiness",
+    text:"Spiral tracing gives two scores: how closely the fingertip follows the line, and how much it shakes. The tremor test is a supporting check. Shaking can raise the tapping and spiral numbers, so it looks for it with both hands held still for three short holds.",
+    cite:"MDS-UPDRS 3.17 \u00b7 Williams (2021) \u00b7 docs/tests/SPIRAL_TEST_PLAN.md" },
 ];
 
 /* ── "Why This" page data (differentiation) ──────────────────────────
@@ -1105,8 +1107,11 @@ const TREND = {
     // not the run's overall verdict, so a steady-but-shaky run plots high on
     // accuracy in green and high on tremor in amber. The home strip shows the
     // first view. App-0.2 runs have neither score and so no point here.
+    // `typical` is the score's own edge (ACC_TYPICAL in core/spiral/metrics.py),
+    // shown under the value on the home ledger. It is not `bands`, which would
+    // also paint the Analysis chart.
     headline:{ key:"accuracy_score", name:"Line accuracy", unit:"", lowerBetter:false,
-               bands:null, statusKey:"accuracy_status" },
+               bands:null, statusKey:"accuracy_status", typical:"≥ 60", typicalAt:60 },
     views:[
       { key:"accuracy", label:"Line accuracy",
         headline:{ key:"accuracy_score", name:"Line accuracy", unit:"", lowerBetter:false,
@@ -1150,7 +1155,7 @@ const TREND = {
     ],
   },
   phonation: {
-    label:"Voice Steadiness", icon:"mic", page:"ddk",
+    label:"Voice Steadiness", icon:"voice", page:"ddk",
     // Lower edge is the MDVP jitter threshold (1.04%); the upper edge is not
     // from a source — both provisional (core/speech/tasks.py).
     headline:{ key:"jitter_pct", name:"Jitter", unit:"%", lowerBetter:true,
@@ -1196,12 +1201,12 @@ const TREND = {
 // "Supporting checks" group before the first of them.
 const TREND_ORDER = ["finger_tapping","spiral","oculomotor","ddk","phonation","gait","tremor"];
 const ST = {
-  ok:  {word:"Typical",   dot:"#22C55E", band:"rgba(34,197,94,.13)"},
+  ok:  {word:"Typical",   dot:"#65D6A6", band:"rgba(101,214,166,.13)"},
   warn:{word:"Monitor",   dot:"#F5A524", band:"rgba(245,165,36,.14)"},
   bad: {word:"Follow-up", dot:"#EF4444", band:"rgba(239,68,68,.14)"},
-  none:{word:"Logged",    dot:"#5197FB", band:"transparent"},
+  none:{word:"Logged",    dot:"#989EFF", band:"transparent"},
 };
-const INK_MUTED = "#B4C0D0", INK_DIM = "#8C9BB2", GRID = "#2A3442", LINE_C = "#5197FB";
+const INK_MUTED = "#B8BED0", INK_DIM = "#8089A6", GRID = "#2A3350", LINE_C = "#989EFF";
 
 let analysisFilter = "all";
 /* Whose history is on screen. "all" pools everyone - what this page did before
@@ -1712,14 +1717,14 @@ function trendSvg(pts, h, pooled){
       + `<circle class="pt-ring" cx="${x(i)}" cy="${y(pt.v)}" r="${r+4}" fill="${ST[pt.status].dot}"`
       + ` opacity="${last?".22":"0"}"/>`
       + `<circle cx="${x(i)}" cy="${y(pt.v)}" r="${r}" fill="${ST[pt.status].dot}"`
-      + ` stroke="#0E1520" stroke-width="${last?2.5:2}"/></g>`;
+      + ` stroke="#0B1020" stroke-width="${last?2.5:2}"/></g>`;
   });
 
   // Direct label on the latest value.
   const lx = x(pts.length-1), lv = y(latestVal(pts));
   const above = lv - 14 > padT+6;
   svg += `<text x="${Math.min(lx, W-padR)}" y="${above? lv-12 : lv+18}" text-anchor="${pts.length===1?"middle":"end"}"
-    font-size="12.5" font-weight="700" fill="#E2E8F0" stroke="#0E1520" stroke-width="4"
+    font-size="12.5" font-weight="700" fill="#E2E8F0" stroke="#0B1020" stroke-width="4"
     stroke-linejoin="round" paint-order="stroke" font-family="'JetBrains Mono',monospace">${fmtNum(latestVal(pts))}${h.unit}</text>`;
 
   // X-axis end labels.
@@ -1925,10 +1930,11 @@ function miniSpark(vals){
 }
 
 /* ── Readings strip (home) ─────────────────────────────
-   The dashboard's headline row: each test's latest headline metric, its band,
-   and a spark of the sessions behind it — the same TREND config the Analysis
-   page charts, so the two can never disagree. Nothing logged yet still says
-   what the tile will measure, which is what a fresh install sees. */
+   The dashboard's readings ledger: one row per test with its latest headline
+   metric, its verdict, the Typical cut-off in words, and a spark of
+   the sessions behind it — the same TREND config the Analysis page charts, so
+   the two can never disagree. Nothing logged yet still says what the row will
+   measure, which is what a fresh install sees. */
 
 async function loadVitals(force){
   if(force || !analysisSessions){
@@ -1969,83 +1975,118 @@ function vitalTile(key, sessions){
                  // and in the report; bands alone left the spiral "Logged"
                  status:statusOf(s, h) }))
     .filter(p => p.v!=null && isFinite(p.v));
-  const head = `<span class="vital-ic">${I[cfg.icon]}</span><span class="vital-test">${t(cfg.label)}</span>`;
-  const name = `<div class="vital-name">${t(h.name)}${h.unit?` <span class="vital-unit-i">(${h.unit})</span>`:""}</div>`;
+  // The unit is printed beside the value, so the metric name goes without it.
+  const name = `<span class="rd-name"><span class="rd-ic">${I[cfg.icon]}</span>
+      <span class="rd-id"><span class="rd-test">${t(cfg.label)}</span>
+        <span class="rd-metric">${t(h.name)}</span></span></span>`;
 
   if(!pts.length){
-    return `<button class="vital vital-idle" onclick="showPage('${cfg.page}')">
-      <div class="vital-head">${head}<span class="vital-wait">${t("Not run yet")}</span></div>
-      <div class="vital-val vital-dim">—</div>
-      ${name}
-      <div class="vital-spark">${idleSpark()}</div>
-      <div class="vital-foot"><span>${t("Run it once to set your baseline")}</span>
-        <span class="vital-go">${I.arrowRight}</span></div>
+    return `<button class="rd-row rd-idle" onclick="showPage('${cfg.page}')">${name}
+      <span class="rd-read"><span class="rd-val rd-dim">—</span></span>
+      <span class="rd-verdict"><span class="rd-wait">${t("Not run yet")}</span></span>
+      <span class="rd-hint">${t("Run it once to set your baseline")}</span>
+      <span class="rd-go">${I.arrowRight}</span>
     </button>`;
   }
 
-  const latest = pts[pts.length-1], prev = pts.length>1 ? pts[pts.length-2] : null;
+  const latest = pts[pts.length-1];
   const st = ST[latest.status];
   const count = pts.length===1 ? t("first reading") : t("{n} sessions",{n:pts.length});
-  return `<button class="vital" onclick="showPage('analysis')">
-    <div class="vital-head">${head}
-      <span class="badge badge-${latest.status}"><span class="badge-dot"></span>${t(st.word)}</span></div>
-    <div class="vital-val">${fmtNum(latest.v)}<span class="vital-unit">${h.unit}</span></div>
-    ${name}
-    <div class="vital-spark">${vitalSpark(pts, h, key)}</div>
-    <div class="vital-foot"><span>${count} · ${fmtDate(latest.iso)}</span>
-      ${prev ? deltaChip(latest.v, prev.v, h.lowerBetter) : ""}</div>
+  const ref = typicalRef(h);
+  return `<button class="rd-row" onclick="showPage('analysis')">${name}
+    <span class="rd-read">
+      <span class="rd-val">${fmtNum(latest.v)}${h.unit?`<span class="rd-unit">${h.unit}</span>`:""}</span>
+      ${ref ? `<span class="rd-ref">${t("typical {ref}",{ref})}</span>` : ""}</span>
+    <span class="rd-verdict">
+      <span class="rd-status rd-${latest.status}"><i></i>${t(st.word)}</span>
+      ${usualNote(pts)}</span>
+    <span class="rd-spark">${vitalSpark(pts, h)}</span>
+    <span class="rd-when"><b>${fmtDate(latest.iso)}</b><span>${count}</span></span>
   </button>`;
 }
 
-// Spark for one tile: status bands behind, the last few sessions as a line,
-// each dot coloured by its band. Same band geometry as trendSvg, no axes.
-function vitalSpark(all, h, key){
+// How far the latest run sits from this person's own usual: the median of up
+// to ten runs before it. One run against the previous one is mostly noise, so
+// there is no "vs last" here, and no red or green: the status word is the
+// verdict. A pooled group has no "usual", and fewer than three earlier runs is
+// not one.
+function usualNote(pts){
+  const prior = pts.slice(0,-1).slice(-10).map(p=>p.v).sort((a,b)=>a-b);
+  if(prior.length < 3 || pooledView()) return "";
+  const mid = prior.length>>1;
+  const usual = prior.length%2 ? prior[mid] : (prior[mid-1]+prior[mid])/2;
+  const d = pts[pts.length-1].v - usual;
+  return `<span class="rd-usual"><b>${d<0?"−":"+"}${fmtNum(Math.abs(d))}</b> ${t("vs usual")}</span>`;
+}
+
+// The Typical cut-off in words, printed under the value: the headline's own
+// `typical`, else the edge of its first Typical band.
+function typicalRef(h){
+  if(h.typical) return h.typical;
+  const ok = (h.bands||[]).find(b => b.status==="ok" && isFinite(b.max));
+  return ok ? `≤ ${ok.max}${h.unit||""}` : "";
+}
+
+// The Typical cut-off as a number, for the row chart's reference line.
+function typicalCut(h){
+  if(h.typicalAt != null) return h.typicalAt;
+  const ok = (h.bands||[]).find(b => b.status==="ok" && isFinite(b.max));
+  return ok ? ok.max : null;
+}
+
+// Chart for one row: the last few sessions in a framed plot with a value axis
+// (rounded ends, plus the Typical cut-off as a dashed line) and the first and
+// last dates underneath. The Typical side of the cut-off is tinted green and
+// every dot takes its own run's status colour; the line itself stays neutral.
+function vitalSpark(all, h){
   const pts = all.slice(-14);
-  const W=280, H=64, pad=7;
+  const W=220, H=66, L=32, R=8, T=6, B=15;
+  const x0=L, x1=W-R, y0=T, y1=H-B;
+  const cut = typicalCut(h);
   const vals = pts.map(p=>p.v);
   let lo=Math.min(...vals), hi=Math.max(...vals);
-  if(h.bands) h.bands.forEach(b=>{ if(isFinite(b.max)){ lo=Math.min(lo,b.max); hi=Math.max(hi,b.max);} });
-  if(lo===hi){ const e=Math.abs(lo)*0.15||1; lo-=e; hi+=e; }
-  const m=(hi-lo)*0.15; lo-=m; hi+=m;
-  const x=i=>pad+(pts.length===1 ? (W-2*pad)/2 : (W-2*pad)*i/(pts.length-1));
-  const y=v=>pad+(H-2*pad)*(1-(v-lo)/(hi-lo));
-  const clampY=v=>Math.max(0, Math.min(H, y(v)));
-  const gid = `vspark-${key}`;
+  if(cut != null){ lo=Math.min(lo,cut); hi=Math.max(hi,cut); }
+  if(lo===hi){ const e=Math.abs(lo)*0.2||1; lo-=e; hi+=e; }
+  // round the ends outward to a 1/2/5 step so the axis labels are plain numbers
+  const span=hi-lo, mag=Math.pow(10, Math.floor(Math.log10(span))), q=span/mag;
+  const step = mag/(q<2 ? 5 : q<5 ? 2 : 1);
+  const floor0 = lo >= 0;
+  lo = Math.floor((lo-span*0.08)/step)*step; hi = Math.ceil((hi+span*0.08)/step)*step;
+  if(floor0) lo = Math.max(lo, 0);
+  const num = v => String(parseFloat(v.toFixed(2)));
+  const x=i=>pts.length===1 ? (x0+x1)/2 : x0+8+(x1-x0-16)*i/(pts.length-1);
+  const y=v=>y0+(y1-y0)*(1-(v-lo)/(hi-lo));
+  const label=(tx,ty,anchor,s)=>`<text x="${tx}" y="${ty}" text-anchor="${anchor}" font-size="9.5" fill="${INK_DIM}">${s}</text>`;
 
   let svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">`
-    + `<defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="${LINE_C}" stop-opacity=".26"/>
-        <stop offset="1" stop-color="${LINE_C}" stop-opacity="0"/></linearGradient></defs>`;
-
-  if(h.bands){
-    let prevMax = -Infinity;
-    for(const b of h.bands){
-      const top = clampY(isFinite(b.max)? b.max : hi);
-      const bot = clampY(isFinite(prevMax)? prevMax : lo);
-      if(bot-top > 0.5) svg += `<rect x="0" y="${top}" width="${W}" height="${bot-top}" fill="${ST[b.status].band}"/>`;
-      prevMax = b.max;
-    }
+    + `<rect x="${x0}" y="${y0}" width="${x1-x0}" height="${y1-y0}" fill="#0E1520"/>`;
+  if(cut != null){
+    const yc = y(cut), below = h.lowerBetter !== false;   // which side is Typical
+    const ta = below ? yc : y0, tb = below ? y1 : yc;
+    if(tb-ta > 0.5) svg += `<rect x="${x0}" y="${ta.toFixed(1)}" width="${x1-x0}" height="${(tb-ta).toFixed(1)}" fill="${ST.ok.band}"/>`;
+    svg += `<line x1="${x0}" y1="${yc.toFixed(1)}" x2="${x1}" y2="${yc.toFixed(1)}" stroke="${ST.ok.dot}"`
+      + ` stroke-width="1" stroke-dasharray="3 3" opacity=".7"/>`;
+    // the cut-off gets its own axis label when it is clear of both ends
+    if(yc-y0 > 11 && y1-yc > 11) svg += label(x0-5, (yc+3).toFixed(1), "end", num(cut));
   }
+  svg += `<rect x="${x0}" y="${y0}" width="${x1-x0}" height="${y1-y0}" fill="none" stroke="${GRID}"/>`
+    + `<line x1="${x0-3}" y1="${y0}" x2="${x0}" y2="${y0}" stroke="${GRID}"/>`
+    + `<line x1="${x0-3}" y1="${y1}" x2="${x0}" y2="${y1}" stroke="${GRID}"/>`
+    + label(x0-5, y0+6, "end", num(hi)) + label(x0-5, y1, "end", num(lo));
   if(pts.length>1){
+    svg += label(x0, H-3, "start", fmtDate(pts[0].iso)) + label(x1, H-3, "end", fmtDate(pts[pts.length-1].iso));
     const line = pts.map((p,i)=>`${i?"L":"M"}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join("");
-    svg += `<path d="${line} L${x(pts.length-1).toFixed(1)},${H} L${x(0).toFixed(1)},${H} Z" fill="url(#${gid})"/>`;
-    svg += `<path d="${line}" fill="none" stroke="${LINE_C}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    svg += `<path d="${line}" fill="none" stroke="${INK_MUTED}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>`;
+  } else {
+    svg += label((x0+x1)/2, H-3, "middle", fmtDate(pts[0].iso));
   }
   pts.forEach((p,i)=>{
     const last = i===pts.length-1;
-    if(last) svg += `<circle cx="${x(i)}" cy="${y(p.v)}" r="7" fill="${ST[p.status].dot}" opacity=".24"/>`;
     const opacity = p.confidence != null && p.confidence < 45 ? ".35" : "1";
-    svg += `<circle cx="${x(i)}" cy="${y(p.v)}" r="${last?4:2.8}" fill="${ST[p.status].dot}"`
-      + ` opacity="${opacity}" stroke="#0E1520" stroke-width="${last?2:1.5}"/>`;
+    svg += `<circle cx="${x(i).toFixed(1)}" cy="${y(p.v).toFixed(1)}" r="${last?3.6:2.3}" fill="${ST[p.status].dot}"`
+      + ` opacity="${opacity}" stroke="#0E1520" stroke-width="${last?1.5:1}"/>`;
   });
   return svg + `</svg>`;
-}
-
-function idleSpark(){
-  const W=280, H=64;
-  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-    <line x1="7" y1="${H/2}" x2="${W-7}" y2="${H/2}" stroke="${GRID}" stroke-width="2"
-      stroke-linecap="round" stroke-dasharray="3 9"/></svg>`;
 }
 
 /* ── Disclaimer dock ──────────────────────────────────────────────────
@@ -2148,10 +2189,11 @@ const RECORDINGS = {
   spiral: {
     file: "img/spiral/example-recording.json",
     tiles: m => [
-      [t("Smoothness"), recNum(m.smoothness_index, 0), "/100", true],
-      [t("Speed variation") + " · CV", recNum(m.vel_cv_pct, 1), "%"],
+      [t("Line accuracy"), recNum(m.accuracy_score, 0), "/100", true],
+      [t("Tremor"), recNum(m.tremor_score, 0), "/100"],
+      [t("Mean deviation"), recNum(m.mean_dev_pct, 1), "%"],
+      [t("Smoothness"), recNum(m.smoothness_index, 0), "/100"],
       [t("Completion"), recNum(m.completion_pct, 0), "%"],
-      [t("Tremor band"), recNum(m.tremor_power_frac == null ? null : m.tremor_power_frac * 100, 1), "%"],
     ],
   },
   oculomotor: {
@@ -2164,7 +2206,7 @@ const RECORDINGS = {
     ],
   },
   ddk: {
-    file: null,   // the only run on record was too noisy to score
+    file: null,   // no de-identified example exported yet (results/ has scoreable runs)
     tiles: m => [
       [t("Rhythm") + " · CV", recNum(m.rhythm_cv_pct, 1), "%", true],
       [t("Rate"), recNum(m.syllable_rate_hz, 1), "/s"],
@@ -2173,7 +2215,7 @@ const RECORDINGS = {
     ],
   },
   tremor: {
-    file: null,   // not run live yet
+    file: null,   // run live since 2026-09-30; no de-identified example exported yet
     tiles: m => [
       [t("Peak frequency"), recNum(m.tremor_peak_hz, 1), "Hz", true],
       [t("Tremor size"), recNum(m.tremor_amp_pct, 2), "%"],
@@ -2390,7 +2432,7 @@ function ldDraw(){
   g.fillStyle = col("--text-disabled"); g.font = "11px Inter, sans-serif"; g.textAlign = "center";
   for(let sec = 0; sec <= dur; sec += 2) g.fillText(sec + " s", X(sec), H - 6);
   // The whole trace faint, so the viewer sees where the clip is going.
-  g.lineWidth = 1.5; g.strokeStyle = "rgba(180,192,208,.18)"; path(s, Infinity);
+  g.lineWidth = 1.5; g.strokeStyle = "rgba(184,190,208,.18)"; path(s, Infinity);
   // The close threshold the detector used, up to now.
   g.setLineDash([4, 4]); g.lineWidth = 1; g.strokeStyle = "rgba(245,165,36,.7)";
   path(c.thresholds.map(r => [r[0], r[1]]), now);
@@ -2399,7 +2441,7 @@ function ldDraw(){
   const taps = c.taps.filter(x => x <= now);
   taps.forEach(x => {
     const age = now - x, flash = Math.max(0, 1 - age / 0.35);
-    g.strokeStyle = `rgba(18,165,148,${0.35 + 0.65*flash})`;
+    g.strokeStyle = `rgba(124,131,253,${0.35 + 0.65*flash})`;
     g.lineWidth = 1 + 2*flash;
     g.beginPath(); g.moveTo(X(x), pad.t); g.lineTo(X(x), H - pad.b); g.stroke();
   });

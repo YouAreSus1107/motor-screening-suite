@@ -36,7 +36,7 @@ window.ZH = {
 "spiral.v2.s3.h": `從中心往外描`,
 "spiral.v2.s3.p": `用自己的速度，不用追點。`,
 "spiral.v2.s4.h": `你的分數`,
-"spiral.v2.s4.p": `動作有多平順穩定。`,
+"spiral.v2.s4.p": `離線條多近、手有多穩。`,
 "spiral.v2.tip1": `坐後面一點，讓手完整入鏡`,
 "spiral.v2.tip2": `保持穩定的速度`,
 "spiral.v2.tip3": `光源在你前方`,
@@ -127,7 +127,7 @@ window.ZH = {
 "home.sec.vitals": `你的測量結果`,
 "home.vitals.link": `完整趨勢 &#8594;`,
 "home.sec.tools": `篩檢工具`,
-"home.warn": `&#9888;&#160;請關閉無關程式以釋出 CPU`,
+"home.warn": `請關閉無關程式以釋出 CPU`,
 "home.warn.title": `相機測驗會在 CPU 上執行大量即時視覺運算。關閉背景程式可釋出核心，讓影格率維持在 30 fps 以上。`,
 "home.carousel.aria": `篩檢工具`,
 "home.carousel.prev": `上一個工具`,
@@ -252,7 +252,7 @@ window.ZH = {
 "why.live.taps": `次敲擊`,
 "why.live.rate": `每秒敲擊次數`,
 "why.live.cv": `目前的節奏 CV%`,
-"why.live.credit": `只顯示手部，畫面其他部分已模糊處理。影片來自 HUBU-FIS，CC BY 4.0。`,
+"why.live.credit": `只顯示手部，畫面其他部分已做馬賽克處理。影片來自 HUBU-FIS，CC BY 4.0。`,
 "Slight": `輕微`,
 "Mild": `輕度`,
 "Moderate": `中度`,
@@ -387,14 +387,21 @@ window.ZH = {
 /* ── spiral tracing ─────────────────────────────────────────────────── */
 "spiral.h1": `螺旋描繪測驗`,
 "spiral.lede": `用指尖在空中描繪螺旋。`,
-"spiral.m1.h": `平滑度指數（SPARC）`,
-"spiral.m1.p": `速度曲線的頻譜弧長（Balasubramanian 等，2015），對應到 0&#8211;100。主要指標：數值越高代表動作越平滑、越自動化。`,
+"spiral.m1.h": `線條準確度（0&#8211;100）`,
+"spiral.m1.p": `指尖偏離螺旋線的距離，以螺旋半徑的百分比表示，取整段描繪的平均。偏離 3% 以內得 100 分，7% 得 60 分，10% 得 30 分。分數越高越好。`,
+"spiral.m1.num": `60 以上為典型 &#183; 30&#8211;60 建議觀察 &#183; 低於 30 建議追蹤*`,
+"spiral.m6.h": `震顫（0&#8211;100）`,
+"spiral.m6.p": `指尖在 4&#8211;8 Hz（疾病相關震顫的頻率範圍）的抖動量，以螺旋半徑的百分比表示。計算前會先移除單一影格的追蹤跳動。分數越高代表震顫越多。較慢的 2&#8211;3 Hz 晃動不計入。`,
+"spiral.m6.num": `低於 0.65% 為典型 &#183; 0.65&#8211;1.0% 輕微 &#183; 1.0% 以上明顯*`,
+"spiral.m7.h": `平滑度指數（SPARC）`,
+"spiral.m7.p": `速度曲線的頻譜弧長（Balasubramanian 等，2015），對應到 0&#8211;100。2026 年 10 月以前是主要指標，現在只作為參考讀數：網路攝影機的抖動對它的影響比真正的震顫還大。`,
+"spiral.note": `整體結果取兩個分數中較差的一個，結果畫面會說明是哪一個決定的。抖動是在未經平滑的指尖位置上量測的，因為繪圖用的平滑處理會把它抹掉。<strong>*兩組區間都是暫定</strong>（<code>core/spiral/metrics.py</code>）：準確度區間來自我們自己錄到的測驗，震顫區間只依據一組對照錄影，一次刻意抖動、一次沒有。`,
 "spiral.m2.h": `速度 CV%`,
 "spiral.m2.p": `動作速度的變異係數。速度曲線不規則是神經退化的典型特徵。`,
 "spiral.m3.h": `標準化急動度`,
 "spiral.m3.p": `動作軌跡的平滑程度。動作越急促，代表動作自動化程度越低。`,
 "spiral.m4.h": `完成度`,
-"spiral.m4.p": `成功描繪的螺旋比例。完成度偏低可能代表動作疲勞或困難。`,
+"spiral.m4.p": `成功描繪的螺旋比例。低於 25% 的測驗不計分。手有一部分離開畫面的片段會略過，並在結果中註明。`,
 "spiral.m5.h": `活動比例`,
 "spiral.m5.p": `手指實際移動與停頓時間的比例。猶豫停頓可能代表動作規劃困難。`,
 "spiral.p1.title": `數位化阿基米德螺旋描繪測驗 &#8212; 範疇回顧`,
@@ -434,7 +441,7 @@ window.ZH = {
 "oculo.m4.p": `正確試次潛伏期的變異度，加上有效試次數與臉部可見比例，決定一次測驗是否可計分。`,
 "oculo.m4.num": `如實呈現資料品質`,
 "oculo.m4.cite": `排除快速／預期性（&lt;90 毫秒）掃視。`,
-"oculo.note": `一次測驗至少需要 <strong>12 個有效的反向掃視試次</strong>才能計分。這是<strong>簡短篩檢版</strong>（40 試次，臨床版每區段 40&#8211;60 試次）。30&#8211;60 fps 的網路攝影機能穩定判斷掃視<em>方向</em>，但無法量測速度或軌跡。<strong>*區間以已發表的健康者（約 6%）與 AD（約 25%）錯誤率為錨點</strong>（<code>core/gaze/metrics.py</code>）&#8212; 並非臨床切點。表現會受光線、相機品質、眼鏡與專注度影響。`,
+"oculo.note": `一次測驗至少需要 <strong>6 個有效的反向掃視試次</strong>才能計分，試次偏少時會以較低的信心度呈現。這是<strong>簡短篩檢版</strong>：每個部分 15 個計分試次，因眨眼或追蹤中斷而失效的試次最多可補 5 個，臨床版則是每區段 40&#8211;60 試次。每個試次都從圓點出現前眼睛停留的位置量起，所以頭部緩慢偏移不會被當成眼球運動。可以跳過其中一個部分，報告只會顯示實際做過的部分。30&#8211;60 fps 的網路攝影機能穩定判斷掃視<em>方向</em>，但無法量測速度或軌跡。<strong>*區間以已發表的健康者（約 6%）與 AD（約 25%）錯誤率為錨點</strong>（<code>core/gaze/metrics.py</code>）&#8212; 並非臨床切點。表現會受光線、相機品質、眼鏡與專注度影響。`,
 "oculo.p1.title": `<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9090874/" target="_blank" rel="noopener">輕度認知障礙與阿茲海默症的掃視性眼動 &#8212; 統合分析</a>`,
 "oculo.p1.authors": `Opwonya 等，2022 &#183; Neuropsychology Review 32(2):193&#8211;227 &#183; PMC9090874`,
 "oculo.p1.body": `匯集 27 組作業條件資料的統合分析。反向掃視錯誤率在區分 AD 與對照組時效果量<strong>大</strong>（SMD 1.59），對 MCI 為中等（0.55），而且在區辨病患與對照上優於順向掃視指標。我們引用它，是因為主要指標出自此研究。`,
@@ -492,7 +499,7 @@ window.ZH = {
 "phon.m2.p": `Shimmer 是同樣的概念用在音量上；HNR 是聲音中有多少是音調而非氣音噪音；聲音顫抖是音高中 2&#8211;10 Hz 的緩慢波動，相當於聲音版的手部顫抖。`,
 "phon.m2.num": `輔助指標，無分級區間`,
 "phon.m2.cite": `由 Praat 透過 praat-parselmouth 量測`,
-"phon.note": `母音至少要有 <strong>2.5 秒</strong>穩定發聲，且聲音比房間噪音高至少 15 dB 才能計分。<strong>*jitter 區間為暫定</strong>：下緣是 MDVP 的病理門檻，上緣沒有文獻來源，而且聲音聲學與阿茲海默症之間的證據比說話速率的證據薄弱。只保存音高曲線。`,
+"phon.note": `母音至少要有 <strong>2.5 秒</strong>穩定發聲，且聲音比房間噪音高至少 12 dB 才能計分。<strong>*jitter 區間為暫定</strong>：下緣是 MDVP 的病理門檻，上緣沒有文獻來源，而且聲音聲學與阿茲海默症之間的證據比說話速率的證據薄弱。只保存音高曲線。`,
 "phon.p1.title": `<a href="https://doi.org/10.1186/s43163-025-00765-y" target="_blank" rel="noopener">輕度阿茲海默症對聲音聲學參數的影響</a>`,
 "phon.p1.authors": `Egyptian Journal of Otolaryngology，2025 &#183; doi:10.1186/s43163-025-00765-y`,
 "phon.p1.body": `比較輕度阿茲海默症者與認知正常者的持續母音聲學。阿茲海默症組的 jitter 與 shimmer 顯著較高。我們引用它作為持續母音部分的依據，同時註明這項證據比說話速率的證據薄弱。`,
@@ -501,7 +508,7 @@ window.ZH = {
 /* ── hand tremor ───────────────────────────────────────────────────── */
 "tremor.h1": `手部顫抖測驗`,
 "tremor.lede": `三段各 20 秒的姿勢，<strong>雙手</strong>都要在畫面中：先掌心朝上放在腿上，再掌心朝下，最後雙臂向前平舉。
-          測驗會在每隻手上尋找 3.5 到 12 Hz 之間的規律抖動。主要指標是顫抖的<strong>頻率</strong>，這是網路攝影機能可靠量測的數值；抖動的大小則只提供估計值。`,
+          測驗會在每隻手上尋找 3.5 到 12 Hz 之間的規律抖動。主要指標是顫抖的<strong>頻率</strong>，這是網路攝影機能可靠量測的數值；抖動的大小則只提供估計值。每一段姿勢都是先錄下來，之後再逐格量測，所以結果會在測驗關閉後稍晚才出現。`,
 "tremor.how.intro": `靜止型顫抖要在雙手<strong>放在腿上</strong>、完全有支撐的情況下檢查，這也是神經科醫師的檢查方式，而且手的兩面都要看到。筆電放在桌上時，它自己的鏡頭看不到您的腿，所以開始前請把網路攝影機往下對準腿上。`,
 "tremor.m1.h": `顫抖頻率（Hz）`,
 "tremor.m1.p": `3.5–12 Hz 頻段中最強的節律。帕金森氏症的靜止型顫抖約 4–6 Hz；本態性與生理性顫抖則更快。`,
@@ -520,7 +527,7 @@ window.ZH = {
 "tremor.m4.num": `手套陀螺儀，100 Hz`,
 "tremor.m4.cite": `docs/tests/TREMOR_TEST_PLAN.md`,
 "tremor.note": `每一段姿勢至少要有 8 秒手完整在畫面中且保持不動，才會計分。鏡頭必須達到每秒 14 格：在忙碌筆電常見的約 16 fps 下，測驗能看到約 7.6 Hz 以下的顫抖，涵蓋靜止型顫抖，但看不到較快的類型。<strong>判定門檻為暫定</strong>（<code>core/tremor/metrics.py</code>）。顫抖並不是阿茲海默症的徵兆；這項測驗是為了找出會干擾其他動作測驗的顫抖，並標出值得請醫師看看的情況。`,
-"tremor.v2.note": `每一段姿勢至少要有 8 秒手完整在畫面中且保持不動，才會計分。測驗能看到的頻段取決於畫面速率：外接網路攝影機每秒 60 格時涵蓋完整的 3.5-12 Hz；忙碌筆電鏡頭約 16 fps 時只到約 7.6 Hz，涵蓋靜止型顫抖，但看不到較快的類型。<strong>判定門檻為暫定</strong>（<code>core/tremor/metrics.py</code>）。顫抖並不是阿茲海默症的徵兆；這項測驗是為了找出會干擾其他動作測驗的顫抖，並標出值得請醫師看看的情況。`,
+"tremor.v2.note": `每一段姿勢至少要有 8 秒手完整在畫面中且保持不動，才會計分。測驗能看到的頻段取決於畫面速率：外接網路攝影機每秒 60 格時涵蓋完整的 3.5-12 Hz；忙碌筆電鏡頭約 16 fps 時只到約 7.6 Hz，涵蓋靜止型顫抖，但看不到較快的類型。動作量是逐格追蹤每隻手皮膚上的點得到的，因為手平放不動時手部關鍵點會自己抖動。這種量測的大小門檻（達手長的 0.06% 為「可能」，達 0.60% 為「偵測到」）是用兩個公開的手腕感測器資料集 PADS 與 Parkinson@Home 訂出的。<strong>峰值需要高出背景多少才算數，仍為暫定</strong>（<code>core/tremor/metrics.py</code>）。顫抖並不是阿茲海默症的徵兆；這項測驗是為了找出會干擾其他動作測驗的顫抖，並標出值得請醫師看看的情況。`,
 "tremor.p1.title": `<a href="https://www.nature.com/articles/s41598-025-97252-4" target="_blank" rel="noopener">以手機相容的電腦視覺進行顫抖分析的效度</a>`,
 "tremor.p1.authors": `Scientific Reports，2025 &#183; PMC12008214`,
 "tremor.p1.body": `將 MediaPipe 與 Apple Vision 的手部追蹤和參考設備比較。兩者都能準確量測顫抖主頻，影片量到的振幅也與臨床顫抖評分（TETRAS）相關。我們引用它，因為它用的正是本測驗使用的手部模型。`,
@@ -763,8 +770,8 @@ window.ZH = {
 
 /* research cards (RESEARCH) */
 "Motor — rhythm and movement": `動作 — 節奏與移動`,
-"Finger tapping measures how much the gaps between taps vary. That variability is higher in neurodegenerative groups than in controls. Spiral tracing adds movement smoothness (SPARC), speed variation, and normalized jerk.":
-  `手指敲擊量測敲擊間隔的變異程度；神經退化族群的變異高於對照組。螺旋描繪再加上動作平滑度（SPARC）、速度變異與標準化急動度。`,
+"Finger tapping measures how much the gaps between taps vary. That variability is higher in neurodegenerative groups than in controls. Spiral tracing adds how closely the fingertip follows a line, with speed variation and smoothness (SPARC) as readings.":
+  `手指敲擊量測敲擊間隔的變異程度；神經退化族群的變異高於對照組。螺旋描繪再加上指尖貼近線條的程度，並以速度變異與平滑度（SPARC）作為參考讀數。`,
 "Roalf et al. (2018) · Wang et al. (2025) · PMC11496774": `Roalf 等（2018）· Wang 等（2025）· PMC11496774`,
 "Oculomotor — inhibitory control": `眼動 — 抑制控制`,
 "The anti-saccade error rate counts how often the eyes are pulled toward a target you were told to look away from. Meta-analysis puts the effect separating Alzheimer's groups from controls at SMD 1.59.":
@@ -774,10 +781,10 @@ window.ZH = {
 "Repeating pa-ta-ka as fast and evenly as possible is the speech counterpart of finger tapping, scored the same way: how much the gaps between syllables vary. Language measures such as word-finding pauses are planned next.":
   `盡量快且平均地重複 pa-ta-ka，是手指敲擊在說話上的對應測驗，計分方式也相同：音節之間的間隔變異有多大。找詞停頓等語言指標是下一步的規劃。`,
 "Li et al., TapTalk (2024) · docs/tests/SPEECH_TEST_PLAN.md": `Li 等，TapTalk（2024）· docs/tests/SPEECH_TEST_PLAN.md`,
-"The method works at home": `這套方法在家可行`,
-"MediaPipe tapping matched Polhemus electromagnetic sensors within ±1 Hz about 90% of the time, and 404 adults with no symptoms completed unsupervised webcam testing at home. Both studies validate the approach, not this implementation.":
-  `MediaPipe 敲擊約有 90% 的讀值落在 Polhemus 電磁感測器的 ±1 Hz 內；另有 404 位無症狀成人在家完成無人監督的網路攝影機測驗。這兩項研究驗證的是方法本身，不是這個實作。`,
-"Li et al., TapTalk (2024) · TAS Test (2022–2025) · PMC10809289": `Li 等，TapTalk（2024）· TAS Test（2022–2025）· PMC10809289`,
+"Tremor and spiral — steadiness": `顫抖與螺旋 — 穩定度`,
+"Spiral tracing gives two scores: how closely the fingertip follows the line, and how much it shakes. The tremor test is a supporting check. Shaking can raise the tapping and spiral numbers, so it looks for it with both hands held still for three short holds.":
+  `螺旋描繪有兩個分數：指尖貼著線條的程度，以及手抖的程度。顫抖測驗是輔助檢查。手抖會讓點擊與螺旋測驗的數值變高，所以這項測驗專門找出它：雙手保持靜止，共三段。`,
+"MDS-UPDRS 3.17 · Williams (2021) · docs/tests/SPIRAL_TEST_PLAN.md": `MDS-UPDRS 3.17 · Williams（2021）· docs/tests/SPIRAL_TEST_PLAN.md`,
 
 /* why this — pillars, states, comparison matrix */
 "Open source": `開放原始碼`,
@@ -833,6 +840,8 @@ window.ZH = {
 "{metric} across {n} sessions": `{n} 次紀錄的{metric}`,
 "no change": `無變化`,
 "vs last": `與上次相比`,
+"vs usual": `與平常相比`,
+"typical {ref}": `一般 {ref}`,
 "Typical": `一般`,
 "Monitor": `觀察`,
 "Follow-up": `建議追蹤`,

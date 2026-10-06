@@ -9,7 +9,7 @@
    startDev()/stopDev(). */
 
 /* Categorical series palette — validated with the dataviz skill's checker
-   against this page's surface (#1C2430, dark): lightness band, chroma floor,
+   against this page's surface (#1A2236, dark): lightness band, chroma floor,
    CVD separation, normal-vision floor and contrast all pass. Slots are
    assigned to channels in FIXED ORDER and never cycled; past slot 8 the
    per-channel tiles below act as small multiples instead of new hues.
@@ -1262,8 +1262,8 @@ function devDraw(){
                      : (Math.abs(v) >= 10 ? v.toFixed(0) : v.toFixed(1));
 
   // Recessive grid + axis labels in text tokens, never a series colour.
-  g.strokeStyle = "#2A3442"; g.lineWidth = 1;
-  g.fillStyle = "#64748B"; g.font = DEV_FONT;
+  g.strokeStyle = "#2A3350"; g.lineWidth = 1;
+  g.fillStyle = "#6F7896"; g.font = DEV_FONT;
   g.textAlign = "right"; g.textBaseline = "middle";
   for(let k=0;k<=4;k++){
     const v = lo + (hi-lo)*k/4, y = Math.round(yOf(v))+0.5;
@@ -1273,7 +1273,7 @@ function devDraw(){
   // In force mode, mark the actuation floor: below it the part is unspecified.
   if(dev.unit === "force" && fm && fm.rated_min_n > lo && fm.rated_min_n < hi){
     const y = Math.round(yOf(fm.rated_min_n)) + 0.5;
-    g.save(); g.strokeStyle = "#64748B"; g.setLineDash([3,4]);
+    g.save(); g.strokeStyle = "#6F7896"; g.setLineDash([3,4]);
     g.beginPath(); g.moveTo(pad.l, y); g.lineTo(pad.l+pw, y); g.stroke(); g.restore();
   }
   g.textAlign = "center"; g.textBaseline = "top";
@@ -1313,7 +1313,7 @@ function devDraw(){
   });
   g.restore();   // release the plot-rectangle clip
 
-  g.fillStyle = "#64748B"; g.font = DEV_FONT;
+  g.fillStyle = "#6F7896"; g.font = DEV_FONT;
   g.textAlign = "left"; g.textBaseline = "top";
   if(!drawable.length && unitKind){
     devDrawEmptyNote(g, pad, pw, unitKind, sel);
@@ -1347,7 +1347,7 @@ function devDraw(){
    sensor moved first, and separate mini-charts would lose that. */
 function devDrawStacked(g, o){
   const {pad, pw, ph, n, traces, drawable, fixedRange, label, unitKind, sel} = o;
-  const TEXT = "#64748B", GRID = "#2A3442";
+  const TEXT = "#6F7896", GRID = "#2A3350";
   g.font = DEV_FONT;
 
   if(!drawable.length){
@@ -1470,7 +1470,7 @@ function devKindWord(unitKind){
 }
 
 function devDrawEmptyNote(g, pad, pw, unitKind, sel){
-  g.fillStyle = "#64748B"; g.font = DEV_FONT;
+  g.fillStyle = "#6F7896"; g.font = DEV_FONT;
   g.textAlign = "left"; g.textBaseline = "top";
   const word = devKindWord(unitKind);
   const anyOfKind = dev.channels.some((_, i) => devKind(i) === unitKind);

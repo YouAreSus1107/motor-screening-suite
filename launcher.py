@@ -92,6 +92,7 @@ _MIME = {
     ".gltf": "model/gltf+json",
     ".bin": "application/octet-stream",
     ".png": "image/png",
+    ".ico": "image/x-icon",
     ".jpg": "image/jpeg",
     ".jpeg": "image/jpeg",
     ".webp": "image/webp",

@@ -539,7 +539,7 @@
   /* ── Shared chart bits ──────────────────────────────────────────── */
 
   const svgWrap = inner => `<div class="rep-chart">${inner}</div>`;
-  const AX = "#8593A8";
+  const AX = "#8089A6";
 
   // The halo (the chart well's own colour, painted under the glyphs) keeps a
   // label legible where it lands on a trace or a bar.
@@ -798,7 +798,7 @@
   // standing out of the flat tracking-noise floor, and the left/right gap is
   // the finding a one-sided rest tremor makes. Units are the same RMS % of
   // hand length the headline uses, per 0.25 Hz step.
-  const HAND_C = { left: LINE_C, right: "#A78BFA" };
+  const HAND_C = { left: LINE_C, right: "#FF9B7A" };
   // Current holds first; "rest" / "rest_count" are the retired table
   // protocol (before 2026-09-27), kept so those sessions still draw.
   const TREMOR_PHASES = [["rest_palm_up", "Palms up"], ["rest_palm_down", "Palms down"],
@@ -896,7 +896,7 @@
   // Knee lift for each leg with every stamp the detector counted, then the
   // sit-to-stand trace with each full stand marked. Both are in body units
   // (thigh lengths), so camera distance cancels out.
-  const LEG_C = { right: "#A78BFA", left: LINE_C };
+  const LEG_C = { right: "#FF9B7A", left: LINE_C };
 
   function gaitLegs(rec) {
     const blocks = (rec.raw || {}).blocks || {};

@@ -534,13 +534,13 @@ function draw(ctx, canvas, lm) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (!lm) return;
   const X = (p) => p[0] * canvas.width, Y = (p) => p[1] * canvas.height;
-  ctx.strokeStyle = "rgba(18,165,148,.85)";
+  ctx.strokeStyle = "rgba(124,131,253,.85)";
   ctx.lineWidth = Math.max(2, canvas.width / 200);
   ctx.beginPath();
   for (const [a, b] of LINKS) { ctx.moveTo(X(lm[a]), Y(lm[a])); ctx.lineTo(X(lm[b]), Y(lm[b])); }
   ctx.stroke();
   // Thumb and index tips carry the signal, so they get the emphasis.
-  ctx.fillStyle = "#F8FAFC";
+  ctx.fillStyle = "#F5F7FA";
   for (const i of [4, 8]) {
     ctx.beginPath();
     ctx.arc(X(lm[i]), Y(lm[i]), Math.max(5, canvas.width / 90), 0, Math.PI * 2);

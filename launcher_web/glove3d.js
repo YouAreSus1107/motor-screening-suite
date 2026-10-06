@@ -96,10 +96,10 @@ const GROUPS = [
 /* ── colours (tokens from styles.css :root) ──────────────────────────────
    One sequential hue for "how much", status colours kept for status only:
    amber = beyond the part's rated band, grey = not fitted / raw only. */
-const RAMP = [new THREE.Color('#134E4A'), new THREE.Color('#12A594'), new THREE.Color('#A7F3E4')];
+const RAMP = [new THREE.Color('#2A2E7A'), new THREE.Color('#7C83FD'), new THREE.Color('#D5D7FF')];
 const C_WARN  = new THREE.Color('#F5A524');
-const C_GHOST = new THREE.Color('#8C9BB2');
-const C_HAND  = new THREE.Color('#9FB3C8');
+const C_GHOST = new THREE.Color('#8089A6');
+const C_HAND  = new THREE.Color('#A3ABC8');
 function ramp(x, out) {
   x = Math.max(0, Math.min(1, x));
   return x < 0.5 ? out.lerpColors(RAMP[0], RAMP[1], x * 2)
@@ -132,7 +132,7 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.75));
 const keyLight = new THREE.DirectionalLight(0xffffff, 0.9);
 keyLight.position.set(0.6, 1, 1.2);
 scene.add(keyLight);
-const rim = new THREE.DirectionalLight(0x12A594, 0.5);
+const rim = new THREE.DirectionalLight(0x7C83FD, 0.5);
 rim.position.set(-1, 0.4, -1);
 scene.add(rim);
 
@@ -301,7 +301,7 @@ function buildSites() {
   const a = anchorOn('midd_meta_11', 0.45, dorsal * IMU_DEPTH);
   const slab = new THREE.Mesh(
     new THREE.BoxGeometry(0.004, 0.034, 0.022),
-    new THREE.MeshStandardMaterial({color: 0x1C2430, emissive: 0x0E8577, emissiveIntensity: 0.25,
+    new THREE.MeshStandardMaterial({color: 0x1A2236, emissive: 0x5F66E8, emissiveIntensity: 0.25,
                                     roughness: 0.4, transparent: true, opacity: 0.95}));
   slab.renderOrder = 2;
   markers.add(slab);

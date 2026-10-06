@@ -4,7 +4,7 @@ import { SimplifyModifier } from 'three/addons/modifiers/SimplifyModifier.js';
 import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
 
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const BRAND   = new THREE.Color(0x12A594);
+const BRAND   = new THREE.Color(0xFF9B7A);
 const INFO    = new THREE.Color(0x38BDF8);
 
 const container = document.getElementById('hand-viz');
@@ -41,10 +41,10 @@ scene.add(ambientLight);
 const dirLight = new THREE.DirectionalLight(0xffffff, 0.9);
 dirLight.position.set(2, 3, 2);
 scene.add(dirLight);
-const rimLight = new THREE.DirectionalLight(0x12A594, 0.25);
+const rimLight = new THREE.DirectionalLight(0xFF8F66, 0.25);
 rimLight.position.set(-2, 1, -1);
 scene.add(rimLight);
-const glowLight = new THREE.PointLight(0x12A594, 0, 0.8);
+const glowLight = new THREE.PointLight(0xFF8F66, 0, 0.8);
 glowLight.position.set(0, 0.05, 0.05);
 scene.add(glowLight);
 
@@ -63,7 +63,7 @@ const scanMat = new THREE.ShaderMaterial({
     void main(){
       float line = step(0.5, fract(vUv.y*120.0 + uTime*0.8));
       float edge = smoothstep(0.0,0.15,vUv.y) * smoothstep(1.0,0.85,vUv.y);
-      gl_FragColor = vec4(0.071,0.647,0.58, line*0.12*uAlpha*edge);
+      gl_FragColor = vec4(1.0,0.682,0.510, line*0.12*uAlpha*edge);
     }`,
 });
 const scanMesh = new THREE.Mesh(new THREE.PlaneGeometry(2,2), scanMat);

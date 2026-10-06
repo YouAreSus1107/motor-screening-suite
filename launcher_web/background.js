@@ -11,8 +11,8 @@
   const canvas = document.getElementById("rd-bg");
   function cssFallback(){
     canvas.style.background =
-      "radial-gradient(ellipse at 15% 50%,rgba(18,165,148,.08),transparent 55%),"
-      + "radial-gradient(ellipse at 85% 50%,rgba(18,165,148,.08),transparent 55%)";
+      "radial-gradient(ellipse at 15% 50%,rgba(52,59,115,.2),transparent 55%),"
+      + "radial-gradient(ellipse at 85% 50%,rgba(52,59,115,.2),transparent 55%)";
   }
   const attrs = {alpha:true, premultipliedAlpha:false, antialias:false, depth:false, stencil:false};
   const gl = canvas.getContext("webgl2", attrs)
@@ -190,23 +190,23 @@
   ].join("\n");
 
   /* ── Look: every tuning knob for the drawn surface, in one place ──
-     Colours are the design tokens (styles.css): a blue-ink valley (--bg
-     pushed toward --interactive), a deep teal, --brand, and a pale cyan crest.
+     Colours are the design tokens (styles.css): an ink valley (--bg) up to --brand-dim,
+     with a slightly lighter crest. Decoration: it must stay well below the UI.
      None of this touches the simulation. */
   const LOOK = {
     relief:     4.5,    /* how raised the strands look (normal strength) */
     diffuse:    0.8,    /* lit share of the colour; the rest is ambient 0.35 */
-    spec:       0.35,   /* crest highlight strength */
+    spec:       0.23,   /* crest highlight strength */
     shininess:  48.0,   /* crest highlight tightness */
-    rim:        0.35,   /* teal rim on slopes facing away from the light */
+    rim:        0.25,   /* brand rim on slopes facing away from the light */
     cavity:     0.4,    /* darkening of tight valleys */
-    opacity:    0.55,   /* strand opacity at full visibility */
-    shadow:     0.45,   /* cast shadow opacity */
+    opacity:    0.38,   /* strand opacity at full visibility */
+    shadow:     0.37,   /* cast shadow opacity */
     shadowOff:  2.5,    /* cast shadow offset, in simulation texels */
     fadeFloor:  0.08,   /* strand visibility at the centre of the fade */
     lean:       0.35,   /* how far the light tilts toward the cursor */
-    ink:   "#0B1830", deep: "#0E6F78", brand: "#12A594", crest: "#9FEDE3",
-    shadowColor: "#03060E"
+    ink:   "#0B1020", deep: "#2D3073", brand: "#585FB8", crest: "#7A80CC",
+    shadowColor: "#03040C"
   };
   function glf(x){ return Number(x).toFixed(4); }
   function glc(hex){
@@ -217,7 +217,7 @@
   /* Display, at window size. The strands are treated as a height field
      (prep G/B hold its gradient) and lit from the upper right, the same
      direction as hand3d.js's key light, so the hand and the surface share one
-     sun: wrapped diffuse, a narrow highlight along the crests, a teal rim on
+     sun: wrapped diffuse, a narrow highlight along the crests, a brand rim on
      the slopes facing away, and darkening in the tight valleys (curvature).
      uMode selects a review view (?bg=): 0 full, 1 height, 2 normals,
      3 lighting only, 4 flat (the pre-2026-09-30 look). */
@@ -253,9 +253,9 @@
     "  float cx = abs(vUv.x - 0.5)*2.0;",
     "  float edgeBoost = smoothstep(0.5, 0.95, cx)*0.15;",
     "  if(uMode > 3.5){",
-    "    /* Flat: the original look (two teals, hard centre cut-out) */",
+    "    /* Flat: the original look (two brand tones, hard centre cut-out) */",
     "    float s0 = smoothstep(0.06, 0.30, v);",
-    "    vec3 c0 = mix(vec3(0.071, 0.647, 0.580), vec3(0.10, 0.75, 0.70), s0*0.5);",
+    "    vec3 c0 = mix(vec3(0.204, 0.231, 0.451), vec3(0.290, 0.322, 0.565), s0*0.5);",
     "    gl_FragColor = vec4(c0, s0*smoothstep(0.1, 0.5, cx)*(0.35 + edgeBoost));",
     "    return;",
     "  }",

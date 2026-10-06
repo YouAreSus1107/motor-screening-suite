@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0E1520">
+<meta name="theme-color" content="#0B1020">
 <title data-i18n="doc.title">Cognitive Screening Suite &#8212; Control Hub</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,8 +18,8 @@
      styles.css, which comes later and wins. Keep it in sync if the shell
      tokens change. -->
 <style>
-html{background:#0E1520;color-scheme:dark}
-body{margin:0;min-height:100vh;background:#0E1520;color:#F8FAFC;overflow-x:hidden;
+html{background:#0B1020;color-scheme:dark}
+body{margin:0;min-height:100vh;background:#0B1020;color:#F5F7FA;overflow-x:hidden;
      font-family:'Inter','Segoe UI','Noto Sans TC',system-ui,-apple-system,sans-serif;
      font-size:18px;line-height:1.55}
 #rd-bg{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%}
@@ -41,7 +44,7 @@ button,input{font:inherit;color:inherit}
 <div class="app">
   <nav>
     <button class="logo" onclick="showPage('home')" aria-label="Go to dashboard" data-i18n-aria="nav.logo.aria">
-      <span class="logo-dot"></span>
+      <img class="logo-icon" src="/favicon.png" alt="" width="26" height="26">
       <span class="logo-text" data-i18n="nav.logoText">Cognitive Screening Suite</span>
     </button>
     <div class="nav-links">
@@ -93,7 +96,7 @@ button,input{font:inherit;color:inherit}
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 data-i18n="home.sec.tools">Screening Tools</h2><div class="sh-line"></div><span class="hub-slot" data-hub-chip></span><span class="cam-slot" data-cam></span><span class="badge badge-warn" title="The camera tests run heavy real-time vision on the CPU. Closing background apps frees up cores and keeps the frame rate above 30 fps." data-i18n-title="home.warn.title" data-i18n="home.warn">&#9888;&#160;Close unrelated programs to free up CPU</span></div>
+      <div class="section-head"><h2 data-i18n="home.sec.tools">Screening Tools</h2><div class="sh-line"></div><span class="hub-slot" data-hub-chip></span><span class="cam-slot" data-cam></span><span class="badge badge-warn cpu-tip" tabindex="0" title="The camera tests run heavy real-time vision on the CPU. Closing background apps frees up cores and keeps the frame rate above 30 fps." data-i18n-title="home.warn.title"><span class="cpu-tip-icon" aria-hidden="true">&#9888;</span><span class="cpu-tip-text" data-i18n="home.warn">Close unrelated programs to free up CPU</span></span></div>
       <div class="carousel" id="carousel" role="group" aria-roledescription="carousel" aria-label="Screening tools" data-i18n-aria="home.carousel.aria">
         <button class="carousel-nav prev" id="carousel-prev" aria-label="Previous tool" data-i18n-aria="home.carousel.prev"></button>
         <div class="carousel-stage" id="cards"></div>
@@ -415,7 +418,7 @@ button,input{font:inherit;color:inherit}
               <div class="ld-verdict" id="ld-verdict"></div>
             </div>
           </div>
-          <p class="val-credit" data-i18n="why.live.credit">Hands only: the rest of each frame is blurred. Video from HUBU-FIS, CC BY 4.0.</p>
+          <p class="val-credit" data-i18n="why.live.credit">Hands only: the rest of each frame is pixelated. Video from HUBU-FIS, CC BY 4.0.</p>
         </div>
 
         <p class="val-next" data-i18n="why.val.next">These are Parkinson's patients. The results show the test picks up
@@ -710,10 +713,10 @@ button,input{font:inherit;color:inherit}
             <div class="frame-cap"><span class="frame-num">3</span><div><h4 data-i18n="spiral.v2.s3.h">Trace from the centre out</h4><p data-i18n="spiral.v2.s3.p">Your own pace. No dot to chase.</p></div></div>
           </li>
           <li class="frame">
-            <figure title="Mini result card: a big smoothness number (72) with a green ✓ chip, beside a small thumbnail of the traced spiral in green." class="art-slot" data-art="spiral/step-4-score">
+            <figure title="Mini result card: two big numbers, line accuracy (92) and tremor (8), with a green ✓ chip, beside a small thumbnail of the traced spiral in green." class="art-slot" data-art="spiral/step-4-score">
               <div class="slot-ph"><span class="slot-ico"></span><b class="slot-name">Your score</b><code class="slot-file">img/spiral/step-4-score.webp</code></div>
             </figure>
-            <div class="frame-cap"><span class="frame-num">4</span><div><h4 data-i18n="spiral.v2.s4.h">Your score</h4><p data-i18n="spiral.v2.s4.p">How smooth and steady it was.</p></div></div>
+            <div class="frame-cap"><span class="frame-num">4</span><div><h4 data-i18n="spiral.v2.s4.h">Your score</h4><p data-i18n="spiral.v2.s4.p">How close to the line, and how steady.</p></div></div>
           </li>
         </ol>
       </section>
@@ -772,12 +775,15 @@ button,input{font:inherit;color:inherit}
           <div class="detail-file">screening_tests/spiral_test.py</div>
       <div class="metrics-section"><h2 data-i18n="common.metrics">Metrics Measured</h2>
         <div class="metrics-grid">
-          <div class="metric-card"><h4 data-i18n="spiral.m1.h">Smoothness Index (SPARC)</h4><p data-i18n="spiral.m1.p">Spectral Arc Length of the speed profile (Balasubramanian et al. 2015), mapped 0&#8211;100. The headline: higher means smoother, more automatic movement.</p></div>
+          <div class="metric-card"><h4 data-i18n="spiral.m1.h">Line accuracy (0&#8211;100)</h4><p data-i18n="spiral.m1.p">How far the fingertip strays from the spiral, as a share of its radius, averaged over the trace. Straying 3% or less scores 100, 7% scores 60 and 10% scores 30. Higher is better.</p><div class="metric-num" data-i18n="spiral.m1.num">60 or more typical &#183; 30&#8211;60 monitor &#183; under 30 follow-up*</div></div>
+          <div class="metric-card"><h4 data-i18n="spiral.m6.h">Tremor (0&#8211;100)</h4><p data-i18n="spiral.m6.p">How much the fingertip shakes at 4&#8211;8 Hz, the range of tremor seen in disease, as a share of the spiral&#8217;s radius. Single-frame tracking jumps are removed first. Higher means more tremor. A slower 2&#8211;3 Hz wobble is not counted.</p><div class="metric-num" data-i18n="spiral.m6.num">under 0.65% typical &#183; 0.65&#8211;1.0% mild &#183; 1.0% or more marked*</div></div>
+          <div class="metric-card"><h4 data-i18n="spiral.m7.h">Smoothness index (SPARC)</h4><p data-i18n="spiral.m7.p">Spectral Arc Length of the speed profile (Balasubramanian et al. 2015), mapped 0&#8211;100. It was the headline until October 2026. It is now a reading only: webcam jitter moved it more than a real tremor did.</p></div>
           <div class="metric-card"><h4 data-i18n="spiral.m2.h">Velocity CV%</h4><p data-i18n="spiral.m2.p">Coefficient of variation of movement velocity. Irregular speed profiles are a hallmark of neurodegeneration.</p></div>
           <div class="metric-card"><h4 data-i18n="spiral.m3.h">Normalized Jerk</h4><p data-i18n="spiral.m3.p">Smoothness of movement trajectory. Jerkier movements suggest reduced motor automaticity.</p></div>
-          <div class="metric-card"><h4 data-i18n="spiral.m4.h">Completion</h4><p data-i18n="spiral.m4.p">Percentage of the spiral successfully traced. Lower completion may indicate motor fatigue or difficulty.</p></div>
+          <div class="metric-card"><h4 data-i18n="spiral.m4.h">Completion</h4><p data-i18n="spiral.m4.p">Percentage of the spiral successfully traced. A run under 25% is not scored. Stretches where the hand was partly out of the picture are skipped and reported.</p></div>
           <div class="metric-card"><h4 data-i18n="spiral.m5.h">Active Ratio</h4><p data-i18n="spiral.m5.p">Proportion of time the finger was actively moving vs. paused. Hesitations can indicate planning difficulty.</p></div>
         </div>
+        <p class="band-note" data-i18n="spiral.note">The overall result is the worse of the two scores, and the result screen says which one decided it. Shake is measured on the raw fingertip position, because the smoothing used for drawing would erase it. <strong>*Both sets of bands are provisional</strong> (<code>core/spiral/metrics.py</code>): the accuracy bands come from our own recorded runs, and the tremor bands rest on a single pair of runs, one with a deliberate tremor and one without.</p>
       </div>
       <div class="papers-section"><h2 data-i18n="common.papers">Research Papers</h2>
         <div class="paper"><h4 data-i18n="spiral.p1.title">Digitized Archimedes Spiral Drawing Test &#8212; Scoping Review</h4><div class="paper-authors" data-i18n="spiral.p1.authors">Wang et al., 2025 &#183; Movement Disorders Clinical Practice</div><p data-i18n="spiral.p1.body">A review of how the digitized spiral test is used across MS, ataxia, dystonia, cerebellar disease, MCI, and Alzheimer's. We cite it because it confirms spiral tracing is an established, measurable test.</p><span class="paper-tag" data-i18n="spiral.p1.tag">Validates the test direction</span></div>
@@ -903,7 +909,7 @@ button,input{font:inherit;color:inherit}
           <div class="metric-card"><h4 data-i18n="oculo.m3.h">Corrected-error rate (%)</h4><p data-i18n="oculo.m3.p">Anti-saccade errors that the eyes then self-corrected toward the right side within the hold window &#8212; inhibition failure vs error-monitoring.</p><div class="metric-num" data-i18n="oculo.m3.num">counted separately</div><div class="metric-cite" data-i18n="oculo.m3.cite">Corrected vs uncorrected errors &#8212; <a href="https://pubmed.ncbi.nlm.nih.gov/15860346/" target="_blank" rel="noopener">Crawford 2005</a></div></div>
           <div class="metric-card"><h4 data-i18n="oculo.m4.h">Latency CV (%) &#183; validity gates</h4><p data-i18n="oculo.m4.p">Variability of correct-trial latency, plus valid-trial counts and face-visible ratio that decide whether a run is scoreable.</p><div class="metric-num" data-i18n="oculo.m4.num">honest data-quality reporting</div><div class="metric-cite" data-i18n="oculo.m4.cite">Excludes express/anticipatory (&lt;90 ms) saccades.</div></div>
         </div>
-        <p style="color:var(--text-disabled);font-size:12px;margin-top:14px;line-height:1.5" data-i18n="oculo.note">A run needs at least <strong>12 valid anti-saccade trials</strong> to be scored. This is a <strong>short screening form</strong> (40 trials vs the clinical 40&#8211;60 per block). A webcam at 30&#8211;60 fps resolves saccade <em>direction</em> robustly but not velocity or trajectory. <strong>*Bands are anchored to published healthy (~6%) and AD (~25%) error rates</strong> (<code>core/gaze/metrics.py</code>) &#8212; not a clinical cut-off. Performance depends on lighting, camera quality, glasses, and attention.</p>
+        <p style="color:var(--text-disabled);font-size:12px;margin-top:14px;line-height:1.5" data-i18n="oculo.note">A run needs at least <strong>6 valid anti-saccade trials</strong> to be scored, and a thin run is reported with a lower confidence. This is a <strong>short screening form</strong>: 15 scored trials per part, with up to 5 replacements for trials lost to blinks or tracking, against the clinical 40&#8211;60 per block. Every trial is measured from where the eye was resting just before the dot appeared, so a slow drift of the head is not read as an eye movement. A part can be skipped, and the report then shows only the parts that were run. A webcam at 30&#8211;60 fps resolves saccade <em>direction</em> robustly but not velocity or trajectory. <strong>*Bands are anchored to published healthy (~6%) and AD (~25%) error rates</strong> (<code>core/gaze/metrics.py</code>) &#8212; not a clinical cut-off. Performance depends on lighting, camera quality, glasses, and attention.</p>
       </div>
       <div class="papers-section"><h2 data-i18n="common.papers">Research Papers</h2>
         <div class="paper"><h4 data-i18n="oculo.p1.title"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9090874/" target="_blank" rel="noopener">Saccadic Eye Movement in MCI and Alzheimer's &#8212; Meta-Analysis</a></h4><div class="paper-authors" data-i18n="oculo.p1.authors">Opwonya et al., 2022 &#183; Neuropsychology Review 32(2):193&#8211;227 &#183; PMC9090874</div><p data-i18n="oculo.p1.body">A meta-analysis pooling 27 task-condition datasets. The anti-saccade error rate showed a <strong>large</strong> effect separating AD from controls (SMD 1.59) and a moderate one for MCI (0.55), and it beat prosaccade measures at telling patients from controls. We cite it because our headline metric comes from it.</p><div class="paper-foot"><span class="paper-tag" data-i18n="oculo.p1.tag">Source of our headline metric</span><a class="paper-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9090874/" target="_blank" rel="noopener"><span data-i18n="common.readPaper">Read paper</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
@@ -1007,7 +1013,7 @@ button,input{font:inherit;color:inherit}
         <div class="rec-card is-empty" data-rec="ddk">
           <div class="rec-head"><span class="rec-eyebrow" data-i18n="common.rec.eyebrow">A real recording</span><div class="rec-stats"></div></div>
           <div class="rec-body">
-            <figure title="Recorded loudness envelope with each syllable marked, the room&#x27;s noise floor, and the gap-between-syllables bars. No clean run exists yet: the one on record was too noisy to score." class="art-slot rec-slot" data-art="ddk/recording">
+            <figure title="Recorded loudness envelope with each syllable marked, the room&#x27;s noise floor, and the gap-between-syllables bars. No de-identified example has been published yet." class="art-slot rec-slot" data-art="ddk/recording">
               <div class="slot-ph"><span class="slot-ico"></span><b class="slot-name">Real recording goes here</b><code class="slot-file">img/ddk/example-recording.json</code></div>
             </figure>
           </div>
@@ -1034,7 +1040,7 @@ button,input{font:inherit;color:inherit}
           <div class="metric-card"><h4 data-i18n="phon.m2.h">Shimmer &#183; HNR &#183; vocal tremor</h4><p data-i18n="phon.m2.p">Shimmer is the same idea for loudness; HNR is how much of the voice is tone rather than breath noise; vocal tremor is a slow 2&#8211;10 Hz wave in the pitch, the voice's version of a hand tremor.</p><div class="metric-num" data-i18n="phon.m2.num">supporting readouts, no bands</div><div class="metric-cite" data-i18n="phon.m2.cite">Measured by Praat through praat-parselmouth</div></div>
         </div>
         <p style="color:var(--text-disabled);font-size:12px;margin-top:14px;line-height:1.5" data-i18n="ddk.note">A run needs at least <strong>10 syllables</strong> and a voice at least 12 dB above the room noise to be scored. <strong>*The bands are provisional</strong>: they match the tapping test's bands because no DDK-specific cut-off has been fitted yet (<code>core/speech/tasks.py</code>). Results depend on the microphone, the room and effort. Audio is analysed and then discarded: only the loudness envelope and the syllable times are saved.</p>
-        <p style="color:var(--text-disabled);font-size:12px;margin-top:8px;line-height:1.5" data-i18n="phon.note">The vowel is scored only if at least <strong>2.5 s</strong> of it is steadily voiced and the voice is at least 15 dB above the room. <strong>*The jitter bands are provisional</strong>: the lower edge is the MDVP pathology threshold, the upper edge is not from a source, and the evidence linking voice acoustics to Alzheimer's is thinner than for speech rate. Only the pitch contour is saved.</p>
+        <p style="color:var(--text-disabled);font-size:12px;margin-top:8px;line-height:1.5" data-i18n="phon.note">The vowel is scored only if at least <strong>2.5 s</strong> of it is steadily voiced and the voice is at least 12 dB above the room. <strong>*The jitter bands are provisional</strong>: the lower edge is the MDVP pathology threshold, the upper edge is not from a source, and the evidence linking voice acoustics to Alzheimer's is thinner than for speech rate. Only the pitch contour is saved.</p>
       </div>
       <div class="papers-section"><h2 data-i18n="common.papers">Research Papers</h2>
         <div class="paper"><h4 data-i18n="ddk.p1.title"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9150739/" target="_blank" rel="noopener">Validating Automatic Diadochokinesis Analysis Methods</a></h4><div class="paper-authors" data-i18n="ddk.p1.authors">Journal of Speech, Language, and Hearing Research, 2022 &#183; PMC9150739</div><p data-i18n="ddk.p1.body">Compared automatic ways of finding syllables in DDK recordings against manual scoring. Amplitude-based onset detection agreed with human raters at &#964;b &#8776; 0.7&#8211;0.84, and rhythm was measured with nPVI. We cite it because our detector and our rhythm index come from it.</p><div class="paper-foot"><span class="paper-tag" data-i18n="ddk.p1.tag">Our measurement method</span><a class="paper-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9150739/" target="_blank" rel="noopener"><span data-i18n="common.readPaper">Read paper</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
@@ -1140,7 +1146,7 @@ button,input{font:inherit;color:inherit}
         <div class="rec-card is-empty" data-rec="tremor">
           <div class="rec-head"><span class="rec-eyebrow" data-i18n="common.rec.eyebrow">A real recording</span><div class="rec-stats"></div></div>
           <div class="rec-body">
-            <figure title="The tremor spectrum for each hand in each hold, with the peak frequency marked. No run has been recorded yet." class="art-slot rec-slot" data-art="tremor/recording">
+            <figure title="The tremor spectrum for each hand in each hold, with the peak frequency marked. No de-identified example has been published yet." class="art-slot rec-slot" data-art="tremor/recording">
               <div class="slot-ph"><span class="slot-ico"></span><b class="slot-name">Real recording goes here</b><code class="slot-file">img/tremor/example-recording.json</code></div>
             </figure>
           </div>
@@ -1153,7 +1159,7 @@ button,input{font:inherit;color:inherit}
         <div class="science-body">
           <div class="detail-file">screening_tests/tremor_test.py</div>
           <p class="science-lede" data-i18n="tremor.lede">Three 20-second holds with <strong>both hands</strong> in view: resting in the lap palms up, then palms down, then with the arms held out.
-          The test looks for a rhythmic shake between 3.5 and 12 Hz in each hand. The headline is the tremor's <strong>frequency</strong>, which a webcam measures reliably, with its size given as an estimate.</p>
+          The test looks for a rhythmic shake between 3.5 and 12 Hz in each hand. The headline is the tremor's <strong>frequency</strong>, which a webcam measures reliably, with its size given as an estimate. Each hold is recorded first and measured afterwards, frame by frame, so the result appears a little after the test closes.</p>
           <p class="science-lede" data-i18n="tremor.how.intro">Rest tremor is checked with the hands <strong>in the lap</strong>, fully supported, the way a neurologist examines it, and both sides of the hand are seen. A laptop's own camera on the table cannot see your lap, so aim a webcam down at it before you start.</p>
       <div class="metrics-section"><h2 data-i18n="common.metrics">Metrics Measured</h2>
         <div class="metrics-grid">
@@ -1162,7 +1168,7 @@ button,input{font:inherit;color:inherit}
           <div class="metric-card"><h4 data-i18n="tremor.m3.h">Left / right ratio</h4><p data-i18n="tremor.m3.p">How much larger the rest movement is in one hand than the other. Parkinsonian tremor usually starts on one side.</p><div class="metric-num" data-i18n="tremor.m3.num">both hands recorded together</div><div class="metric-cite" data-i18n="tremor.m3.cite">MDS-UPDRS 3.17</div></div>
           <div class="metric-card"><h4 data-i18n="tremor.m4.h">Camera vs glove (Hz)</h4><p data-i18n="tremor.m4.p">With the sensor glove plugged in, its motion sensor records every hold too. The gap between the glove's peak and the camera's peak is how this test is being validated.</p><div class="metric-num" data-i18n="tremor.m4.num">glove gyro, 100 Hz</div><div class="metric-cite" data-i18n="tremor.m4.cite">docs/tests/TREMOR_TEST_PLAN.md</div></div>
         </div>
-        <p style="color:var(--text-disabled);font-size:12px;margin-top:14px;line-height:1.5" data-i18n="tremor.v2.note">A hold is scored when at least 8 seconds of it had the hand fully in view and still. The band the test can see depends on the frame rate: at the 60 frames a second of an external webcam it covers the full 3.5-12 Hz, while at the ~16 fps of a busy laptop camera it stops near 7.6 Hz, which covers rest tremor but not the faster kinds. <strong>The detection thresholds are provisional</strong> (<code>core/tremor/metrics.py</code>). A tremor is not a sign of Alzheimer's disease; the test is here to catch a tremor that would distort the other motor tests, and to flag one that is worth a doctor's look.</p>
+        <p style="color:var(--text-disabled);font-size:12px;margin-top:14px;line-height:1.5" data-i18n="tremor.v2.note">A hold is scored when at least 8 seconds of it had the hand fully in view and still. The band the test can see depends on the frame rate: at the 60 frames a second of an external webcam it covers the full 3.5-12 Hz, while at the ~16 fps of a busy laptop camera it stops near 7.6 Hz, which covers rest tremor but not the faster kinds. Movement is measured by following points on the skin of each hand from frame to frame, because the hand landmarks jitter on a flat resting hand. The size thresholds for that measurement (possible from 0.06% of hand length, detected from 0.60%) were set on two public wrist-sensor datasets, PADS and Parkinson@Home. <strong>How far the peak must stand out of the background is still provisional</strong> (<code>core/tremor/metrics.py</code>). A tremor is not a sign of Alzheimer's disease; the test is here to catch a tremor that would distort the other motor tests, and to flag one that is worth a doctor's look.</p>
       </div>
       <div class="papers-section"><h2 data-i18n="common.papers">Research Papers</h2>
         <div class="paper"><h4 data-i18n="tremor.p1.title"><a href="https://www.nature.com/articles/s41598-025-97252-4" target="_blank" rel="noopener">Validity of Tremor Analysis Using Smartphone-Compatible Computer Vision</a></h4><div class="paper-authors" data-i18n="tremor.p1.authors">Scientific Reports, 2025 &#183; PMC12008214</div><p data-i18n="tremor.p1.body">Compared MediaPipe and Apple Vision hand tracking against reference equipment. Both measured tremor peak frequency accurately, and video amplitude correlated with clinical tremor ratings (TETRAS). We cite it because it is the same hand model this test uses.</p><div class="paper-foot"><span class="paper-tag" data-i18n="tremor.p1.tag">Validates MediaPipe</span><a class="paper-link" href="https://www.nature.com/articles/s41598-025-97252-4" target="_blank" rel="noopener"><span data-i18n="common.readPaper">Read paper</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
