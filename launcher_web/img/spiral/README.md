@@ -9,7 +9,7 @@ The art direction is shared across every test. It is written out in `launcher_we
 | `step-1-get-set.webp` | 4:3 | **Point your finger.** Laptop screen showing the spiral, sitting high on the screen. The character's hand is raised with the index finger pointed at it; the whole hand fits inside the frame. |
 | `step-2-practice.webp` | 4:3 | **Practice spiral.** A smaller spiral with a soft teal pace band along one stretch of it and a speed gauge beside it. Clearly marked as practice: dashed outline, no score. |
 | `step-3-trace.webp` | 4:3 | **Trace from the centre.** The fingertip following the spiral outward from the centre, a fading trail behind it. No dot ahead to chase. |
-| `step-4-score.webp` | 4:3 | **Your score.** Mini result card: a big smoothness number (72) with a green ✓ chip, beside a small thumbnail of the traced spiral in green. |
+| `step-4-score.webp` | 4:3 | **Your score.** Mini result card: two big numbers, line accuracy (92) and tremor (8), with a green ✓ chip, beside a small thumbnail of the traced spiral in green. (The result screen has shown two scores since spiral engine 4, 2026-10-01; it used to show one smoothness number.) |
 | `tip-1-do.webp` | 1:1 | **Hand fits.** Seated back; whole hand and fingertip inside the frame, below the spiral. |
 | `tip-1-dont.webp` | 1:1 | **Hand off the bottom.** Seated too close; the palm runs off the bottom edge, red edge band and inward chevron. |
 | `tip-2-do.webp` | 1:1 | **Even pace.** Dots along a spiral arc, evenly spaced: a steady speed. |
@@ -19,4 +19,4 @@ The art direction is shared across every test. It is written out in `launcher_we
 
 ## Not an illustration
 
-`example-recording.json` is the real run drawn under "What we measure": a de-identified copy of one session (`test`, `mode`, `metrics` and `raw` only, with no profile or timestamp). `renderRecording()` in `launcher_web/app.js` draws it with `report.js`'s own charts.
+`example-recording.json` is the real run drawn under "What we measure": a de-identified copy of one session (`test`, `mode`, `metrics` and `raw` only, with no profile or timestamp). `renderRecording()` in `launcher_web/app.js` draws it with `report.js`'s own charts. Its metrics were brought to spiral engine 4 on 2026-10-06 (the same recomputation `tools/rescore_spiral.py` does, from the raw samples), with the engine-1 values kept under `metrics.v1`. Rescore it again whenever `ENGINE_VERSION` in `core/spiral/metrics.py` changes, or the tiles will show scores the live test no longer gives.

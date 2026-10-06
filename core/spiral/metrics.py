@@ -3,18 +3,22 @@ Spiral metrics (pure) — literature-standard movement-quality scoring for a
 self-paced spiral trace. No camera, no UI; unit-tested against synthetic traces
 in screening_tests/tests/test_spiral.py. See docs/tests/SPIRAL_TEST_PLAN.md §3.
 
-Headline is movement smoothness:
+Two scores decide the verdict, and the worse one wins (engine 4, see
+ENGINE_VERSION below and docs/tests/SPIRAL_TEST_PLAN.md §3.4):
+  accuracy_score            0-100 line accuracy from mean_dev_pct, the
+                            swept-angle radial deviation as a % of the radius.
+  tremor_score / tremor_pct robust 4-8 Hz fingertip oscillation as a % of the
+                            radius (median amplitude, tracking jumps dropped).
+Readings, saved but deciding nothing:
   sparc / smoothness_index  Spectral Arc Length (Balasubramanian et al., J
-                            NeuroEng Rehabil 2015) of the speed profile — the
-                            amplitude/duration-robust smoothness measure.
-Support:
+                            NeuroEng Rehabil 2015) of the speed profile. The
+                            headline until engine 4.
   norm_jerk                 dimensionless jerk from the 2-D position path.
   vel_cv_pct                speed coefficient of variation (Schroter V-Rel 2003).
-  tremor_power_frac / hz    detrended-position tremor-band power + peak (bounded
-                            by the 30 fps Nyquist caveat — secondary readout).
-  mean_dev_pct              swept-angle radial deviation (spatial accuracy).
+  tremor_power_frac         detrended-position 3.5-12 Hz band power (the
+                            original bounded tremor readout).
   completion_pct            fraction of the template visited — a data-quality
-                            GATE, not the headline.
+                            GATE, not a score.
 
 Jitter is measured on the *raw* (minimally filtered) fingertip: the One-Euro
 smoothing used for display would erase it (docs/tests/SPIRAL_TEST_PLAN.md §3.1).

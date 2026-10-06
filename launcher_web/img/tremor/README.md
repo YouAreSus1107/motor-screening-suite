@@ -21,4 +21,4 @@ The art direction is shared across every test. It is written out in `launcher_we
 
 ## Not an illustration
 
-`example-recording.json` is the real run drawn under "What we measure". None is on record yet, so the page shows a placeholder. To add one, copy a clean session from `results/` with only `test`, `mode`, `metrics` and `raw` (no profile or timestamp), then set `file` for this test in `RECORDINGS` (`launcher_web/app.js`).
+`example-recording.json` is the real run drawn under "What we measure". None has been copied here yet, so the page shows a placeholder (`results/` has held live runs since 2026-09-30). To add one, copy a clean session from `results/` with only `test`, `mode`, `metrics` and `raw` (no profile or timestamp), then set `file` for this test in `RECORDINGS` (`launcher_web/app.js`).

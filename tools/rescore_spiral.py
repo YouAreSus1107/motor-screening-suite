@@ -1,6 +1,6 @@
 """
-Rescore saved spiral sessions with the current spiral engine (3: noise-aware
-SPARC cutoff; two scores, line accuracy and tremor).
+Rescore saved spiral sessions with the current spiral engine (4: noise-aware
+SPARC cutoff kept as a reading; two scores, line accuracy and tremor).
 
 Engine 1 found SPARC's adaptive cutoff with the canonical fixed 5 % threshold,
 which the webcam's tracker-noise floor crossed at random: clean runs scored
